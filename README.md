@@ -17,7 +17,15 @@ UniApp Vue3 TypeScript 模板
 
 ## 文档
 
+[请查看文档](http://localhost:5173)
 
+## 分支
+
+| 分支   | 说明                     | github地址 | gitee地址 |
+| ------ | ------------------------ | ---------- | --------- |
+| master | master分支没集成ui组件库 |            |           |
+| uni-ui | 集成DCloud官方UI组件库   |            |           |
+| wot-ui | 集成Wot UI组件库         |            |           |
 
 ## 技术栈
 
@@ -39,6 +47,8 @@ UniApp Vue3 TypeScript 模板
 - [z-paging](https://github.com/SmileZXLee/uniapp-z-paging) - UniApp 下拉刷新和上拉加载插件
 - [Auto Import](https://github.com/antfu/unplugin-auto-import) - 自动按需导入 API
 - [dcloudio/uni-preset-vue](https://github.com/dcloudio/uni-preset-vue/tree/vite-ts) - UniApp官方vue3-ts模板
+- [uni-ui](https://uniapp.dcloud.io/component/uniui/uni-ui) - DCloud官方UI组件库，提供丰富的移动端组件
+- [wot-ui](https://github.com/Moonofweisheng/wot-ui) - 基于Vue3+TS开发的uni-app组件库，轻量、简洁
 
 ## 功能演示页面
 
@@ -119,6 +129,93 @@ pnpm run lint:prettier
 pnpm run lint:stylelint
 ```
 
+## 部署
+
+### Nginx 部署
+
+1. 构建 H5 项目：
+   ```bash
+   pnpm run build:h5
+   ```
+2. 将生成的文件（位于 `dist/build/h5/`）复制到 Nginx 服务器的静态文件目录
+3. 配置 Nginx 支持 Vue Router 的 history 模式：
+   ```nginx
+   server {
+       listen 80;
+       server_name your-domain.com;
+       root /var/www/html/dist/build/h5;
+       index index.html;
+       
+       location / {
+           try_files $uri $uri/ /index.html;
+       }
+       
+       # 静态资源缓存
+       location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg)$ {
+           expires 1y;
+           add_header Cache-Control "public, immutable";
+       }
+   }
+   ```
+
+### Docker 部署
+
+项目提供了 Docker 支持，可以快速部署 H5 应用。
+
+#### 使用 Docker 命令部署
+
+```bash
+# 构建镜像
+docker build -t uniapp-h5 .
+
+# 运行容器
+docker run -d -p 80:80 --name uniapp-h5-container uniapp-h5
+```
+
+#### 使用 Docker Compose 部署
+
+```bash
+# 使用 docker-compose 构建和启动服务
+docker-compose up -d
+
+# 停止并删除服务
+docker-compose down
+```
+
+#### 使用 nerdctl 部署
+
+nerdctl 是一个与 Docker 兼容的 containerd CLI 工具，可以作为 Docker 的替代品使用：
+
+```bash
+# 构建镜像
+nerdctl build -t uniapp-h5 .
+
+# 运行容器
+nerdctl run -d -p 80:80 --name uniapp-h5-container uniapp-h5
+
+# 查看运行中的容器
+nerdctl ps
+
+# 停止容器
+nerdctl stop uniapp-h5-container
+
+# 删除容器
+nerdctl rm uniapp-h5-container
+
+# 删除镜像
+nerdctl rmi uniapp-h5
+```
+
+#### 使用 nerdctl compose 部署
+
+```bash
+# 使用 nerdctl-compose 构建和启动服务
+nerdctl compose up -d
+
+# 停止并删除服务
+nerdctl-compose down
+```
+
 ## 项目结构
 
 ```
@@ -143,47 +240,6 @@ src/
 ├── manifest.json    # 应用配置
 └── uni.scss         # 全局样式
 ```
-
-## 开发规范
-
-### 代码规范
-
-1. 使用TypeScript进行开发，充分利用类型系统提高代码质量
-2. 遵循ESLint和Prettier规则，保持代码风格统一
-3. 使用Composition API编写Vue组件
-4. 组件命名遵循PascalCase规范
-5. 变量命名遵循camelCase规范
-
-### Git提交规范
-
-项目使用Commitlint校验提交信息，提交信息需遵循[Conventional Commits](https://www.conventionalcommits.org/zh-hans/v1.0.0/)规范：
-
-```bash
-# 提交格式
-<type>[optional scope]: <description>
-
-# 示例
-feat: 添加新功能
-fix: 修复bug
-docs: 更新文档
-style: 代码格式调整
-refactor: 代码重构
-test: 添加测试
-chore: 构建过程或辅助工具的变动
-```
-
-### 目录规范
-
-1. 页面组件统一放在`src/pages`目录下，每个页面一个独立文件夹
-2. 工具函数放在`src/utils`目录下
-3. 全局状态管理放在`src/stores`目录下
-4. 类型定义放在`src/types`目录下
-
-### 样式规范
-
-1. 使用UnoCSS原子化CSS框架，提高开发效率
-2. 样式命名遵循BEM规范
-3. 全局样式变量定义在`src/uni.scss`中
 
 ## 许可证
 
