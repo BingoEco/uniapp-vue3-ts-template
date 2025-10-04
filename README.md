@@ -143,6 +143,7 @@ pnpm run lint:stylelint
    server {
        listen 80;
        server_name your-domain.com;
+       // 自定义
        root /var/www/html/dist/build/h5;
        index index.html;
        
@@ -213,32 +214,86 @@ nerdctl rmi uniapp-h5
 nerdctl compose up -d
 
 # 停止并删除服务
-nerdctl-compose down
+nerdctl compose down
 ```
 
 ## 项目结构
-
-```
-src/
-├── pages/           # 页面组件
-│   ├── index/       # 首页
-│   ├── demo/        # 功能演示列表
-│   ├── pinia/       # Pinia 状态管理演示
-│   ├── unocss/      # UnoCSS 样式演示
-│   ├── dayjs/       # Day.js 日期处理演示
-│   ├── zpaging/     # z-paging 分页组件演示
-│   ├── lodash/      # Lodash 工具库演示
-│   └── request/     # 网络请求演示
-├── stores/          # Pinia 状态管理
-│   ├── modules/     # 状态模块
-│   └── index.ts     # 状态管理入口
-├── types/           # TypeScript 类型定义
-├── utils/           # 工具函数
-├── App.vue          # 根组件
-├── main.ts          # 入口文件
-├── pages.json       # 页面路由配置
-├── manifest.json    # 应用配置
-└── uni.scss         # 全局样式
+```md
+uniapp-vue3-ts-template/                 # 项目根目录
+├── deploy/                              # 部署相关配置文件
+│   ├── nginx.conf                       # Nginx部署配置文件
+│   └── nginx_ssl.conf                   # Nginx SSL部署配置文件
+├── src/                                 # 源代码目录
+│   ├── api/                             # 接口相关文件
+│   │   └── .gitkeep                     # Git占位符文件，确保空目录也能被Git跟踪
+│   ├── components/                      # 公共组件目录
+│   │   └── .gitkeep                     # Git占位符文件
+│   ├── pages/                           # 页面目录
+│   │   ├── dayjs/                       # Day.js示例页面
+│   │   │   └── dayjs.vue                # Day.js功能演示页面
+│   │   ├── demo/                        # 示例页面
+│   │   │   └── demo.vue                 # 示例演示页面
+│   │   ├── index/                       # 首页
+│   │   │   └── index.vue                # 应用首页
+│   │   ├── lodash/                      # Lodash示例页面
+│   │   │   └── lodash.vue               # Lodash功能演示页面
+│   │   ├── pinia/                       # Pinia状态管理示例页面
+│   │   │   └── pinia.vue                # Pinia功能演示页面
+│   │   ├── request/                     # 网络请求示例页面
+│   │   │   └── request.vue              # 请求功能演示页面
+│   │   ├── unocss/                      # UnoCSS示例页面
+│   │   │   └── unocss.vue               # UnoCSS功能演示页面
+│   │   └── zpaging/                     # z-paging组件示例页面
+│   │       └── zpaging.vue              # 分页组件演示页面
+│   ├── static/                          # 静态资源目录
+│   │   └── logo.png                     # 应用Logo图片
+│   ├── stores/                          # 状态管理目录（Pinia）
+│   │   ├── modules/                     # 状态管理模块
+│   │   │   └── member.ts                # 用户状态管理模块
+│   │   └── index.ts                     # 状态管理入口文件
+│   ├── types/                           # TypeScript类型定义目录
+│   │   └── auto-imports.d.ts            # 自动导入类型定义文件
+│   ├── utils/                           # 工具函数目录
+│   │   ├── dayjs.ts                     # Day.js工具配置文件
+│   │   └── http.ts                      # HTTP请求工具封装
+│   ├── App.vue                          # 应用根组件
+│   ├── env.d.ts                         # 环境变量类型定义
+│   ├── main.ts                          # 应用入口文件
+│   ├── manifest.json                    # 应用配置文件（UniApp）
+│   ├── pages.json                       # 页面路由配置文件
+│   ├── shime-uni.d.ts                   # UniApp类型定义补充
+│   └── uni.scss                         # 全局样式文件
+├── .husky/                              # Git钩子工具目录
+│   ├── commit-msg                       # 提交信息校验钩子
+│   └── pre-commit                       # 提交前校验钩子
+├── .vscode/                             # VSCode编辑器配置目录
+│   ├── extensions.json                  # 推荐扩展配置
+│   └── settings.json                    # 编辑器设置
+├── .editorconfig                        # 编辑器配置统一文件
+├── .eslintrc-auto-import.json           # ESLint自动导入配置
+├── .gitattributes                       # Git属性配置
+├── .gitignore                           # Git忽略文件配置
+├── .npmrc                               # NPM配置文件
+├── .nvmrc                               # Node版本管理配置
+├── .prettierignore                      # Prettier格式化忽略配置
+├── .prettierrc                          # Prettier格式化规则配置
+├── .stylelintignore                     # Stylelint样式检查忽略配置
+├── .stylelintrc.cjs                     # Stylelint样式检查规则配置
+├── Dockerfile                           # Docker镜像构建文件
+├── LICENSE                              # 开源许可证
+├── README.md                            # 项目说明文档
+├── commitlint.config.js                 # 提交信息规范配置
+├── demo.gif                             # 演示GIF图片
+├── docker-compose.yaml                  # Docker容器编排配置
+├── eslint.config.mjs                    # ESLint配置文件
+├── favicon.ico                          # 网站图标
+├── index.html                           # HTML模板文件
+├── package.json                         # 项目配置和依赖管理文件
+├── pnpm-lock.yaml                       # PNPM依赖锁定文件
+├── shims-uni.d.ts                       # UniApp类型声明文件
+├── tsconfig.json                        # TypeScript配置文件
+├── unocss.config.ts                     # UnoCSS配置文件
+└── vite.config.ts                       # Vite构建工具配置文件
 ```
 
 ## 许可证
