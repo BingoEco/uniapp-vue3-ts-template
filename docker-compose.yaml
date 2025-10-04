@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  uniapp-h5:
+    build: .
+    ports:
+      - "80:80"
+    container_name: uniapp-h5-container
+    restart: always
