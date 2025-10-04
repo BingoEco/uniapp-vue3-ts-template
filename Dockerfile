@@ -1,5 +1,5 @@
 # 构建阶段 - 使用Node.js 20和pnpm
-FROM node:20-alpine as build-stage
+FROM node:20-alpine AS build-stage
 
 # 安装pnpm
 RUN npm install -g pnpm
@@ -26,20 +26,23 @@ FROM nginx:alpine
 COPY --from=build-stage /app/dist/build/h5/ /usr/share/nginx/html/
 
 # 添加默认的nginx配置以支持SPA路由
-RUN echo "server {" > /etc/nginx/conf.d/default.conf && \
-    echo "    listen 80;" >> /etc/nginx/conf.d/default.conf && \
-    echo "    server_name localhost;" >> /etc/nginx/conf.d/default.conf && \
-    echo "    location / {" >> /etc/nginx/conf.d/default.conf && \
-    echo "        root /usr/share/nginx/html;" >> /etc/nginx/conf.d/default.conf && \
-    echo "        index index.html;" >> /etc/nginx/conf.d/default.conf && \
-    echo "        try_files \$uri \$uri/ /index.html;" >> /etc/nginx/conf.d/default.conf && \
-    echo "    }" >> /etc/nginx/conf.d/default.conf && \
-    echo "    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg)$ {" >> /etc/nginx/conf.d/default.conf && \
-    echo "        root /usr/share/nginx/html;" >> /etc/nginx/conf.d/default.conf && \
-    echo "        expires 1y;" >> /etc/nginx/conf.d/default.conf && \
-    echo "        add_header Cache-Control \"public, immutable\";" >> /etc/nginx/conf.d/default.conf && \
-    echo "    }" >> /etc/nginx/conf.d/default.conf && \
-    echo "}" >> /etc/nginx/conf.d/default.conf
+RUN cat > /etc/nginx/conf.d/default.conf <<'EOF'
+server {
+    listen 80;
+    server_name localhost;
+    root /usr/share/nginx/html;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+}
+EOF
 
 # 暴露端口
 EXPOSE 80
