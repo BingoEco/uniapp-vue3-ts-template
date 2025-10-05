@@ -1,88 +1,98 @@
 {
-	"easycom": {
-		"custom": {
-			// 配置z-paging自动注册
-			"^(?!z-paging-refresh|z-paging-load-more)z-paging(.*)": "z-paging/components/z-paging$1/z-paging$1.vue"
-		}
-	},
-	"pages": [
-		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app",
-				"navigationStyle": "custom"
-			}
-		},
-		{
-			"path": "pages/demo/demo",
-			"style": {
-				"navigationBarTitleText": "demo"
-			}
-		},
-		{
-			"path": "pages/pinia/pinia",
-			"style": {
-				"navigationBarTitleText": "pinia"
-			}
-		},
-		{
-			"path": "pages/unocss/unocss",
-			"style": {
-				"navigationBarTitleText": "unocss测试"
-			}
-		},
-		{
-			"path": "pages/dayjs/dayjs",
-			"style": {
-				"navigationBarTitleText": "dayjs测试"
-			}
-		},
-		{
-			"path": "pages/zpaging/zpaging",
-			"style": {
-				"navigationBarTitleText": "z-paging测试"
-			}
-		},
-		{
-			"path": "pages/lodash/lodash",
-			"style": {
-				"navigationBarTitleText": "lodash测试"
-			}
-		},
-		{
-			"path": "pages/request/request",
-			"style": {
-				"navigationBarTitleText": "request"
-			}
-		}
-	],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	},
-	"tabBar": {
+  "easycom": {
+    "custom": {
+      // 配置z-paging自动注册
+      "^(?!z-paging-refresh|z-paging-load-more)z-paging(.*)": "z-paging/components/z-paging$1/z-paging$1.vue",
+      // 配置uni-ui自动注册
+      "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
+    }
+  },
+  "pages": [
+    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "uni-app",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/demo/demo",
+      "style": {
+        "navigationBarTitleText": "demo"
+      }
+    },
+    {
+      "path": "pages/pinia/pinia",
+      "style": {
+        "navigationBarTitleText": "pinia"
+      }
+    },
+    {
+      "path": "pages/unocss/unocss",
+      "style": {
+        "navigationBarTitleText": "unocss测试"
+      }
+    },
+    {
+      "path": "pages/dayjs/dayjs",
+      "style": {
+        "navigationBarTitleText": "dayjs测试"
+      }
+    },
+    {
+      "path": "pages/zpaging/zpaging",
+      "style": {
+        "navigationBarTitleText": "z-paging测试"
+      }
+    },
+    {
+      "path": "pages/lodash/lodash",
+      "style": {
+        "navigationBarTitleText": "lodash测试"
+      }
+    },
+    {
+      "path": "pages/request/request",
+      "style": {
+        "navigationBarTitleText": "request"
+      }
+    },
+    {
+      "path": "pages/uniui/uniui",
+      "style": {
+        "navigationBarTitleText": "uni-ui测试"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
     // 底部导航栏颜色
-		"color": "#9799a5",
+    "color": "#9799a5",
     // 底部导航栏选中颜色
-		"selectedColor": "#28B389",
-		"list": [
-			{
-				"text": "首页",
-				"pagePath": "pages/index/index"
+    "selectedColor": "#28B389",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index"
         // 底部导航栏图标
-				// "iconPath": "static/images/tabBar/home.png",
+        // "iconPath": "static/images/tabBar/home.png",
         // 选中时底部导航栏图标
-				// "selectedIconPath": "static/images/tabBar/home-active.png"
-			},
-			{
-				"text": "演示",
-				"pagePath": "pages/demo/demo"
-				// "iconPath": "static/images/tabBar/demo.png",
-				// "selectedIconPath": "static/images/tabBar/demo-active.png"
-			}
-		]
-	}
+        // "selectedIconPath": "static/images/tabBar/home-active.png"
+      },
+      {
+        "text": "演示",
+        "pagePath": "pages/demo/demo"
+      },
+      {
+        "text": "uni-ui",
+        "pagePath": "pages/uniui/uniui"
+      }
+    ]
+  }
 }
