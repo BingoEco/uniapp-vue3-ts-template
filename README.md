@@ -75,9 +75,21 @@ UniApp Vue3 TypeScript 模板
 - pnpm (推荐) / npm / yarn
 - vcode
 
+### 克隆项目
+
+```bash
+# gitee
+git clone https://gitee.com/BingoEco/uniapp-vue3-ts-template.git
+
+# github
+git clone https://github.com/BingoEco/uniapp-vue3-ts-template.git
+```
+
 ### 安装依赖
 
 ```bash
+cd uniapp-vue3-ts-template
+
 pnpm install
 ```
 
