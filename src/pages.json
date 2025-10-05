@@ -2,7 +2,9 @@
 	"easycom": {
 		"custom": {
 			// 配置z-paging自动注册
-			"^(?!z-paging-refresh|z-paging-load-more)z-paging(.*)": "z-paging/components/z-paging$1/z-paging$1.vue"
+			"^(?!z-paging-refresh|z-paging-load-more)z-paging(.*)": "z-paging/components/z-paging$1/z-paging$1.vue",
+			// 配置wot-design-uni自动注册
+			"^wd-(.*)": "wot-design-uni/components/wd-$1/wd-$1.vue"
 		}
 	},
 	"pages": [
@@ -55,6 +57,12 @@
 			"style": {
 				"navigationBarTitleText": "request"
 			}
+		},
+		{
+			"path": "pages/wot-design/wot-design",
+			"style": {
+				"navigationBarTitleText": "wot-design"
+			}
 		}
 	],
 	"globalStyle": {
@@ -64,17 +72,17 @@
 		"backgroundColor": "#F8F8F8"
 	},
 	"tabBar": {
-    // 底部导航栏颜色
+		// 底部导航栏颜色
 		"color": "#9799a5",
-    // 底部导航栏选中颜色
+		// 底部导航栏选中颜色
 		"selectedColor": "#28B389",
 		"list": [
 			{
 				"text": "首页",
 				"pagePath": "pages/index/index"
-        // 底部导航栏图标
+				// 底部导航栏图标
 				// "iconPath": "static/images/tabBar/home.png",
-        // 选中时底部导航栏图标
+				// 选中时底部导航栏图标
 				// "selectedIconPath": "static/images/tabBar/home-active.png"
 			},
 			{
@@ -82,7 +90,11 @@
 				"pagePath": "pages/demo/demo"
 				// "iconPath": "static/images/tabBar/demo.png",
 				// "selectedIconPath": "static/images/tabBar/demo-active.png"
-			}
+			},
+      {
+        "text": "wot-ui",
+        "pagePath": "pages/wot-design/wot-design"
+      }
 		]
 	}
 }
