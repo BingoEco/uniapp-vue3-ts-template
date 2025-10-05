@@ -17,15 +17,15 @@ UniApp Vue3 TypeScript 模板
 
 ## 文档
 
-[请查看文档](http://localhost:5173)
+[请查看文档](https://blog.csdn.net/ou5157/article/details/152552961)
 
 ## 分支
 
-| 分支   | 说明                     | github地址 | gitee地址 |
-| ------ | ------------------------ | ---------- | --------- |
-| master | master分支没集成ui组件库 |            |           |
-| uni-ui | 集成DCloud官方UI组件库   |            |           |
-| wot-ui | 集成Wot UI组件库         |            |           |
+| 分支   | 说明                                                         | github地址                                                   | gitee地址                                                    |
+| ------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| master | master分支没有集成ui组件库，其他技术栈均集成，可自行添加ui组件 | [github](https://github.com/BingoEco/uniapp-vue3-ts-template) | [gitee](https://gitee.com/BingoEco/uniapp-vue3-ts-template)  |
+| uni-ui | 在master分支的基础上，集成DCloud官方UI组件库                 | [github](https://github.com/BingoEco/uniapp-vue3-ts-template/tree/uni-ui) | [gitee](https://gitee.com/BingoEco/uniapp-vue3-ts-template/tree/uni-ui/) |
+| wot-ui | 在master分支的基础上，集成Wot UI组件库                       | [github](https://github.com/BingoEco/uniapp-vue3-ts-template/tree/wot-ui) | [gitee](https://gitee.com/BingoEco/uniapp-vue3-ts-template/tree/wot-ui/) |
 
 ## 技术栈
 
