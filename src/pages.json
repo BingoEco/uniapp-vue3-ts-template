@@ -82,6 +82,7 @@
         "pagePath": "pages/index/index"
         // 底部导航栏图标
         // "iconPath": "static/images/tabBar/home.png",
+        // "iconPath": "static/images/tabBar/home.png",
         // 选中时底部导航栏图标
         // "selectedIconPath": "static/images/tabBar/home-active.png"
       },
