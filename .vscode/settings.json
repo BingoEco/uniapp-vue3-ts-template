@@ -6,7 +6,7 @@
   // 保存时自动修复 ESLint 错误
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
-    "source.fixAll.stylelint": true
+    "source.fixAll.stylelint": "explicit"
   },
   // 保存时自动格式化样式文件
   "stylelint.validate": ["css", "scss", "vue", "html"],

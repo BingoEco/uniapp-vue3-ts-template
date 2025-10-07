@@ -8,7 +8,8 @@
 </template>
 
 <script setup lang="ts">
-// import { onMounted, ref } from 'vue';
+import { ref, onMounted } from 'vue';
+
 const title = ref('Hello');
 
 console.log(title.value);
@@ -23,6 +24,8 @@ onMounted(() => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
+  background-color: var(--bg-color);
 }
 
 .logo {
@@ -41,6 +44,6 @@ onMounted(() => {
 
 .title {
   font-size: 36rpx;
-  color: #8f8f94;
+  color: var(--text-color);
 }
 </style>

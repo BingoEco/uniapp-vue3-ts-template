@@ -32,6 +32,15 @@ module.exports = {
     'keyframes-name-pattern': null, // 不对关键帧名称命名规则进行检查
     'no-descending-specificity': null, // 允许选择器特异性降序排列
     'no-empty-source': null, // 允许空的源文件
+    'scss/load-partial-extension': 'always', // 在@import中使用扩展名
+
+    // 未知类型选择器的处理规则
+    'selector-type-no-unknown': [
+      true,
+      {
+        ignoreTypes: [],
+      },
+    ],
 
     // 未知伪类选择器的处理规则
     'selector-pseudo-class-no-unknown': [
