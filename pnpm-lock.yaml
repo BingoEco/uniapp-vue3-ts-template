@@ -172,13 +172,8 @@ importers:
         specifier: 1.78.0
         version: 1.78.0
       sass-loader:
-<<<<<<< HEAD
-        specifier: ^16.0.5
-        version: 16.0.5(sass@1.78.0)
-=======
         specifier: ^14.0.0
         version: 14.2.1(sass@1.78.0)
->>>>>>> master
       stylelint:
         specifier: ^16.25.0
         version: 16.25.0(typescript@5.9.3)
@@ -7677,7 +7672,6 @@ snapshots:
       typescript: 5.9.3
       vue: 3.5.22(typescript@5.9.3)
 
-<<<<<<< HEAD
   '@uni-ku/root@1.4.1(vite@5.2.8(@types/node@24.6.2)(sass@1.78.0)(terser@5.44.0))':
     dependencies:
       '@vue/compiler-sfc': 3.4.21
@@ -7685,8 +7679,6 @@ snapshots:
       jsonc-parser: 3.3.1
       vite: 5.2.8(@types/node@24.6.2)(sass@1.78.0)(terser@5.44.0)
 
-=======
->>>>>>> master
   '@unocss/astro@65.5.0(vite@5.2.8(@types/node@24.6.2)(sass@1.78.0)(terser@5.44.0))(vue@3.5.22(typescript@5.9.3))':
     dependencies:
       '@unocss/core': 65.5.0
@@ -10453,11 +10445,7 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-<<<<<<< HEAD
-  sass-loader@16.0.5(sass@1.78.0):
-=======
   sass-loader@14.2.1(sass@1.78.0):
->>>>>>> master
     dependencies:
       neo-async: 2.6.2
     optionalDependencies:
