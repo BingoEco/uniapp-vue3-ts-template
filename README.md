@@ -19,12 +19,16 @@ UniApp Vue3 TypeScript 模板
 
 [请查看文档](https://blog.csdn.net/ou5157/article/details/152552961)
 
+## 开发说明
+
+pages目录下均为测试页面，都可删除，此外还要删除pages.json的页面配置。
+
 ## 分支
 
 | 分支   | 说明                                                         | github地址                                                   | gitee地址                                                    |
 | ------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | master | master分支没有集成ui组件库，其他技术栈均集成，可自行添加ui组件 | [github](https://github.com/BingoEco/uniapp-vue3-ts-template) | [gitee](https://gitee.com/BingoEco/uniapp-vue3-ts-template)  |
-| uni-ui | 在master分支的基础上，集成DCloud官方UI组件库                 | [github](https://github.com/BingoEco/uniapp-vue3-ts-template/tree/uni-ui) | [gitee](https://gitee.com/BingoEco/uniapp-vue3-ts-template/tree/uni-ui/) |
+| uni-ui | 在master分支的基础上，集成DCloud官方UI组件库，全端适配       | [github](https://github.com/BingoEco/uniapp-vue3-ts-template/tree/uni-ui) | [gitee](https://gitee.com/BingoEco/uniapp-vue3-ts-template/tree/uni-ui/) |
 | wot-ui | 在master分支的基础上，集成Wot UI组件库                       | [github](https://github.com/BingoEco/uniapp-vue3-ts-template/tree/wot-ui) | [gitee](https://gitee.com/BingoEco/uniapp-vue3-ts-template/tree/wot-ui/) |
 
 ## 技术栈
@@ -47,6 +51,7 @@ UniApp Vue3 TypeScript 模板
 - [z-paging](https://github.com/SmileZXLee/uniapp-z-paging) - UniApp 下拉刷新和上拉加载插件
 - [Auto Import](https://github.com/antfu/unplugin-auto-import) - 自动按需导入 API
 - [dcloudio/uni-preset-vue](https://github.com/dcloudio/uni-preset-vue/tree/vite-ts) - UniApp官方vue3-ts模板
+- [uni-network](https://github.com/uni-helper/uni-network) - 为 uni-app 打造的基于 Promise 的 HTTP 客户端
 - [uni-ui](https://uniapp.dcloud.io/component/uniui/uni-ui) - DCloud官方UI组件库，提供丰富的移动端组件
 - [wot-ui](https://github.com/Moonofweisheng/wot-ui) - 基于Vue3+TS开发的uni-app组件库，轻量、简洁
 
