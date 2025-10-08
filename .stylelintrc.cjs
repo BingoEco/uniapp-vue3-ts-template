@@ -26,6 +26,7 @@ module.exports = {
 
   // 自定义规则
   rules: {
+    'block-no-empty': null, // 允许空的CSS块
     'import-notation': 'string', // 要求使用字符串形式的 import 语句
     'selector-class-pattern': null, // 不对类选择器命名规则进行检查
     'custom-property-pattern': null, // 不对自定义属性命名规则进行检查
